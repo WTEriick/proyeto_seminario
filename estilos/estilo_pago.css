@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #080c14;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px;
+}
+
+/* Contenedor móvil similar a las capturas */
+.mobile-container {
+    width: 100%;
+    max-width: 412px;
+    background-color: #080c14;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5px;
+    border-bottom: 1px solid #121b2d;
+}
+
+.brand {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+
+.brand span {
+    color: #ff7a00;
+    font-size: 0.7rem;
+    vertical-align: super;
+    margin-left: 2px;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.2rem;
+    color: #a0aec0;
+}
+
+.cart-icon-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #ff6b00;
+    color: white;
+    font-size: 0.65rem;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Título Principal */
+.page-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 10px 5px;
+}
+
+.page-title i {
+    color: #ffb800;
+}
+
+/* Tarjetas de Secciones */
+.card-section {
+    background-color: #111827;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #1f293d;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+/* Formularios e Inputs */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+input {
+    background-color: #0b0f19;
+    border: 1px solid #1f293d;
+    border-radius: 12px;
+    padding: 14px 16px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input::placeholder {
+    color: #374151;
+}
+
+input:focus {
+    border-color: #3b82f6;
+}
+
+/* Métodos de Pago */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #111827;
+    border: 1px solid #1f293d;
+    border-radius: 14px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.payment-method.active {
+    border-color: #2563eb;
+    background-color: #111827;
+    box-shadow: 0 0 0 1px #2563eb;
+}
+
+.method-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.method-icon {
+    font-size: 1.5rem;
+    width: 32px;
+    text-align: center;
+}
+
+.method-icon.visa { color: #1a1f71; background: white; border-radius: 4px; font-size: 1rem; padding: 2px; }
+.method-icon.mastercard { color: #eb001b; background: white; border-radius: 4px; font-size: 1rem; padding: 2px; }
+.method-icon.paypal { color: #003087; background: white; border-radius: 4px; font-size: 1rem; padding: 2px; }
+
+.method-text .name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: block;
+}
+
+.method-text .desc {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.radio-circle {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #374151;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-method.active .radio-circle {
+    border-color: #2563eb;
+}
+
+.payment-method.active .radio-circle::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #2563eb;
+    border-radius: 50%;
+}
+
+/* Sección Tu Pedido - ESTADO VACÍO */
+.empty-cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+    text-align: center;
+    gap: 12px;
+}
+
+.empty-cart-icon {
+    font-size: 2.5rem;
+    color: #374151;
+    margin-bottom: 5px;
+}
+
+.empty-cart-text {
+    font-size: 0.95rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* Botón Finalizar Compra Inhabilitado */
+.btn-submit {
+    background-color: #1f293d;
+    color: #4b5563;
+    border: none;
+    border-radius: 14px;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: not-allowed;
+    margin-top: 10px;
+}
+
+.ssl-notice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: #4b5563;
+    text-align: center;
+}

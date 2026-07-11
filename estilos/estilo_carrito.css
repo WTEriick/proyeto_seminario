@@ -1,0 +1,224 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#070b1b;
+    color:white;
+}
+header{
+
+    width:100%;
+    height:90px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 40px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    background:#090d20;
+}
+
+.logo{
+
+    font-size:38px;
+    font-weight:bold;
+    letter-spacing:2px;
+
+}
+
+.game{
+
+    color:#f3b126;
+}
+
+.store{
+
+    color:white;
+}
+
+.iconos i{
+
+    color:#a7b3d5;
+
+    font-size:28px;
+
+    margin-left:35px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.iconos i:hover{
+
+    color:white;
+}
+.contenido{
+
+    width:100%;
+    padding:50px;
+}
+
+.contenido h1{
+
+    font-size:52px;
+    font-weight:bold;
+
+    display:flex;
+    align-items:center;
+
+    gap:20px;
+}
+
+.contenido h1 i{
+
+    color:#f3b126;
+}
+.carrito-vacio{
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    margin-top:140px;
+}
+
+.circulo{
+
+    width:210px;
+    height:210px;
+
+    border-radius:50%;
+
+    background:#111a40;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border:2px solid rgba(255,255,255,.05);
+
+    margin-bottom:45px;
+}
+
+.circulo i{
+
+    font-size:75px;
+
+    color:#284a9b;
+}
+
+.carrito-vacio h2{
+
+    font-size:50px;
+
+    margin-bottom:20px;
+}
+
+.carrito-vacio p{
+
+    font-size:26px;
+
+    color:#8892b7;
+
+    margin-bottom:45px;
+}
+
+button{
+
+    width:320px;
+    height:80px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:#2d59e6;
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+button:hover{
+
+    background:#3c67ef;
+}
+@media(max-width:768px){
+
+header{
+
+    padding:20px;
+}
+
+.logo{
+
+    font-size:28px;
+}
+
+.iconos i{
+
+    font-size:22px;
+
+    margin-left:20px;
+}
+
+.contenido{
+
+    padding:30px;
+}
+
+.contenido h1{
+
+    font-size:34px;
+}
+
+.circulo{
+
+    width:150px;
+    height:150px;
+}
+
+.circulo i{
+
+    font-size:55px;
+}
+
+.carrito-vacio h2{
+
+    font-size:32px;
+
+    text-align:center;
+}
+
+.carrito-vacio p{
+
+    font-size:20px;
+
+    text-align:center;
+}
+
+button{
+
+    width:250px;
+    height:65px;
+
+    font-size:22px;
+}
+
+}

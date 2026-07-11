@@ -1,0 +1,429 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #060913;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+.navbar {
+    background-color: #0b0f19;
+    border-bottom: 1px solid #141b2d;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 15px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #fca311;
+}
+
+.logo-white { color: #ffffff; }
+.logo-tm {
+    font-size: 8px;
+    vertical-align: super;
+    color: #ef4444;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-btn {
+    background-color: #262930;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.nav-btn.active, .nav-btn:hover {
+    background-color: #3e424c;
+}
+
+.select-container {
+    position: relative;
+}
+
+.nav-select {
+    background-color: #262930;
+    color: white;
+    border: 1px solid #3e424c;
+    padding: 8px 25px 8px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none;
+}
+
+.select-container::after {
+    content: "▼";
+    font-size: 8px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #aaa;
+}
+
+.search-and-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-bar {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 15px;
+    width: 220px;
+    font-size: 14px;
+    color: #333;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.icon {
+    color: #94a3b8;
+    transition: color 0.2s;
+}
+
+.icon:hover { color: white; }
+
+
+.hero-banner {
+    position: relative;
+    background: linear-gradient(135deg, #111827 0%, #030712 100%);
+    border-radius: 0 0 20px 20px;
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 600px;
+    z-index: 2;
+}
+
+.badge {
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.game-meta {
+    color: #64748b;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.rating {
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.rating-count { color: #475569; margin-left: 5px; }
+
+.price-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #475569;
+    font-size: 20px;
+}
+
+.current-price {
+    color: #fca311;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.discount-badge {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary {
+    background-color: #1d4ed8;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover { background-color: #2563eb; }
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: background 0.2s;
+}
+
+.btn-secondary:hover { background-color: rgba(255, 255, 255, 0.15); }
+
+.features-bar {
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 20px;
+    background-color: #0b0f19;
+    border-radius: 12px;
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+
+.catalog-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 60px 20px;
+}
+
+.catalog-header {
+    margin-bottom: 25px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    color: #64748b;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.filter-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background-color: transparent;
+    color: #64748b;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tag.active, .tag:hover {
+    background-color: #1d4ed8;
+    color: white;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1100px) { .products-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 750px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .products-grid { grid-template-columns: repeat(1, 1fr); } }
+
+.product-card {
+    background-color: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.card-img-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; 
+    background-color: #1e293b;
+    overflow: hidden;
+    border-radius: 18px 18px 0 0;
+}
+
+
+.game-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+.card-badge {
+    position: absolute;
+    z-index: 3;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.card-badge.discount {
+    top: 10px;
+    left: 10px;
+    background-color: #ef4444;
+    color: white;
+}
+
+.card-badge.rating-badge {
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fca311;
+}
+
+.card-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.card-category {
+    font-size: 11px;
+    color: #475569;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.card-prices {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-price-current {
+    color: #fca311;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.card-price-old {
+    color: #475569;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+.btn-add {
+    background-color: #1d4ed8;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-add:hover {
+    background-color: #2563eb;
+}

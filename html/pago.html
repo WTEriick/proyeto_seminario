@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interfaz web tienda GAMESTORE - Resumen y Pago</title>
+        <link rel="stylesheet" href="C:\Users\juare\OneDrive\Escritorio\Proyecto_seminario\estilos\estilo_pago.css">
+    </head>
+    <body>
+        <div class="mobil-container">
+            <head class="navbar">
+                <div class="brand">Gamestore</div>
+                <div class="nav-icons">
+                    <div class="cart-icon-container">
+                        <i class="fa-soldi fa-cart-cart-shopping"></i>
+                        <span class="cart-badge">0</span>
+                    </div>
+                    <i class="fa-regular fa-user"></i>
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </head>
+            <div class="page-title">
+                <i class="fa-solid fa-credit-card"></i>
+            </div>
+            <section class="card-selection">
+                <h2 class="section-title"Datos de facturacion></h2>
+
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label>Apellido</label>
+                    <input type="text" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label>Direccion</label>
+                    <input type="text" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label>Ciudad</label>
+                    <input type="text" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label>Codigo Postal</label>
+                    <input type="text" placeholder="">
+                </div>
+            </section>
+
+            <section class="card-selection">
+                <h2 class="section-title">Metodo de pago</h2>
+                <div class="payment-options">
+                    <div class="payment-method active">
+                        <div class="method-info">
+                            <div class="method-icon visa"><i class="fa-brands fa-cc-visa"></i></div>
+                            <div class="method-text">
+                                <span class="name">visa</span>
+                                <span class="desc">Debito o Credito Visa</span>
+                            </div>
+                        </div>
+                        <div class="radio-circle"></div>
+                    </div>
+                    <div class="payment-method">
+                        
+               <div class="method-info">
+                        <div class="method-icon mastercard"><i class="fa-brands fa-cc-mastercard"></i></div>
+                        <div class="method-text">
+                            <span class="name">Mastercard</span>
+                            <span class="desc">Débito o crédito Mastercard</span>
+                        </div>
+                    </div>
+                    <div class="radio-circle"></div>
+                </div>
+
+                <div class="payment-method">
+                    <div class="method-info">
+                        <div class="method-icon paypal"><i class="fa-brands fa-paypal"></i></div>
+                        <div class="method-text">
+                            <span class="name">PayPal</span>
+                            <span class="desc">Pago seguro con PayPal</span>
+                        </div>
+                    </div>
+                    <div class="radio-circle"></div>
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 10px;">
+                <label>Número de tarjeta</label>
+                <input type="text" placeholder="1234 5678 9012 3456">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Vencimiento</label>
+                    <input type="text" placeholder="MM / AA">
+                </div>
+                <div class="form-group">
+                    <label>Código CVV</label>
+                    <input type="password" placeholder="***">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Nombre en la tarjeta</label>
+                <input type="text" placeholder="JUAN GARCIA">
+            </div>
+        </section>
+
+        <section class="card-section">
+            <h2 class="section-title">Tu pedido</h2>
+            
+            <div class="empty-cart-container">
+                <i class="fa-solid fa-basket-shopping empty-cart-icon"></i>
+                <p class="empty-cart-text">No hay productos agregados al carrito.</p>
+            </div>
+
+            <button class="btn-submit" disabled>
+                <i class="fa-solid fa-check"></i> Finalizar Compra
+            </button>
+
+            <div class="ssl-notice">
+                <i class="fa-solid fa-lock"></i> Transacción cifrada SSL 256-bit
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
