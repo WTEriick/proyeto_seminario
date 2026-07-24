@@ -1,0 +1,203 @@
+/* ===================================================
+   DISEÑO RESPONSIVO (Adaptabilidad a todas las pantallas)
+   =================================================== */
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Imágenes y videos adaptables */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Contenedores flexibles */
+.container, .wrapper, main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Tablas con desplazamiento horizontal en celulares */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Media Queries para pantallas pequeñas (Celulares) */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  /* Si usas grillas o columnas, las convierte a 1 sola columna en móvil */
+  .row, .grid, .flex-container {
+    flex-direction: column !important;
+    display: block !important;
+  }
+
+  .col, [class*="col-"] {
+    width: 100% !important;
+    margin-bottom: 15px;
+  }
+}
+
+/* ===================================================
+   BOTÓN Y MODO DALTONISMO
+   =================================================== */
+
+/* Botón flotante en la esquina superior izquierda */
+.btn-daltonismo {
+  position: fixed;
+  top: 80px;
+  left: 15px;
+  z-index: 99999;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-daltonismo:hover {
+  background-color: #333333;
+  transform: scale(1.05);
+}
+
+/* Estilos aplicados cuando el modo daltonismo está activo */
+body.modo-daltonismo {
+  /* Filtro de alto contraste para diferenciar tonos rojos/verdes */
+  filter: contrast(125%) saturate(140%);
+}
+
+/* Ajustes visuales directos a botones e hipervínculos durante el modo activo */
+body.modo-daltonismo a {
+  text-decoration: underline !important;
+  font-weight: bold;
+}
+
+body.modo-daltonismo button,
+body.modo-daltonismo .btn {
+  border: 2px solid #000000 !important;
+}
+/* ===================================================
+   FOOTER TIPO STEAM
+   =================================================== */
+.steam-footer {
+  background-color: #171d25;
+  color: #8f98a0;
+  font-family: inherit;
+  font-size: 12px;
+  padding: 40px 20px;
+  margin-top: 50px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.steam-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Lado Izquierdo */
+.steam-footer-left {
+  flex: 1;
+  min-width: 280px;
+  max-width: 380px;
+}
+
+.steam-footer-logo {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 15px 0;
+  letter-spacing: 2px;
+}
+
+.steam-footer-copy {
+  color: #8f98a0;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+  font-size: 11px;
+}
+
+.steam-footer-socials {
+  display: flex;
+  gap: 15px;
+}
+
+.steam-footer-socials a {
+  color: #c6d4df !important;
+  text-decoration: none !important;
+  font-size: 13px;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.steam-footer-socials a:hover {
+  color: #ffffff !important;
+}
+
+/* Lado Derecho */
+.steam-footer-right {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.steam-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.steam-col h4 {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Forzar los colores de los enlaces para que no salgan azules */
+.steam-col a {
+  color: #8f98a0 !important;
+  text-decoration: none !important;
+  font-size: 12px;
+  transition: color 0.2s ease;
+}
+
+.steam-col a:hover {
+  color: #67c1f5 !important; /* Azul Steam al pasar el cursor */
+}
+
+/* Responsivo para móviles */
+@media screen and (max-width: 768px) {
+  .steam-footer-container {
+    flex-direction: column;
+  }
+  .steam-footer-right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}

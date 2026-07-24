@@ -427,3 +427,36 @@ body {
 .btn-add:hover {
     background-color: #2563eb;
 }
+.hero-banner{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.hero-image{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+.hero-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,
+    rgba(0,0,0,.85),
+    rgba(0,0,0,.45),
+    rgba(0,0,0,.15));
+}
+
+.hero-content{
+    position: relative;
+    z-index: 2;
+}

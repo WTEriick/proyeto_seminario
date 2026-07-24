@@ -1,3 +1,17 @@
+/* ==========================================
+   1. VARIABLES DE DISEÑO Y CONFIGURACIÓN GENERAL
+   ========================================== */
+:root {
+    --bg-principal: #0a0e17;     /* Azul oscuro profundo del fondo */
+    --bg-tarjetas: #111827;       /* Fondo de los contenedores/secciones */
+    --bg-inputs: #070a10;         /* Fondo oscuro para los campos de texto */
+    --color-texto: #ffffff;
+    --color-secundario: #8892b0;   /* Gris para etiquetas y textos secundarios */
+    --color-acento: #ffbb00;      /* Amarillo/Dorado para precios importantes */
+    --color-verde: #10b981;       /* Verde vibrante para el botón de éxito */
+    --color-borde-foco: #2563eb;  /* Azul para resaltar inputs seleccionados */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,57 +20,58 @@
 }
 
 body {
-    background-color: #080c14;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    padding: 20px 10px;
-}
-
-/* Contenedor móvil similar a las capturas */
-.mobile-container {
-    width: 100%;
-    max-width: 412px;
-    background-color: #080c14;
+    background-color: var(--bg-principal);
+    color: var(--color-texto);
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    padding-bottom: 50px;
 }
 
-/* Navbar */
-.navbar {
+/* ==========================================
+   2. NAVBAR / HEADER
+   ========================================== */
+.header {
+    background-color: var(--bg-principal);
+    border-bottom: 1px solid #1e293b;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5px;
-    border-bottom: 1px solid #121b2d;
+    padding: 0 20px;
 }
 
-.brand {
+.logo {
+    font-size: 24px;
     font-weight: 800;
-    text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 1.2rem;
 }
 
-.brand span {
-    color: #ff7a00;
-    font-size: 0.7rem;
-    vertical-align: super;
-    margin-left: 2px;
+.logo span {
+    color: var(--color-acento);
 }
 
-.nav-icons {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    font-size: 1.2rem;
-    color: #a0aec0;
+.nav a {
+    color: var(--color-secundario);
+    text-decoration: none;
+    margin-right: 25px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--color-texto);
 }
 
 .cart-icon-container {
     position: relative;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -64,215 +79,277 @@ body {
     position: absolute;
     top: -8px;
     right: -10px;
-    background-color: #ff6b00;
+    background-color: #ef4444;
     color: white;
-    font-size: 0.65rem;
+    font-size: 11px;
     font-weight: bold;
+    padding: 2px 6px;
     border-radius: 50%;
-    width: 16px;
-    height: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-/* Título Principal */
-.page-title {
+/* ==========================================
+   3. CONTENEDOR PRINCIPAL (GRID)
+   ========================================== */
+.checkout-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr; /* Izquierda más ancha que derecha */
+    gap: 30px;
+    align-items: start;
+}
+
+/* Título principal de la sección */
+.checkout-form-section > h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 1.5rem;
-    font-weight: 700;
-    padding: 10px 5px;
 }
 
-.page-title i {
-    color: #ffb800;
+/* Bloques organizadores internos dentro del formulario */
+.form-section-block {
+    background-color: var(--bg-tarjetas);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
 }
 
-/* Tarjetas de Secciones */
-.card-section {
-    background-color: #111827;
-    border-radius: 16px;
-    padding: 24px;
+.form-section-block h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--color-texto);
+    font-weight: 600;
+}
+
+/* ==========================================
+   4. COMPONENTES DE FORMULARIO (INPUTS)
+   ========================================== */
+.form-row {
     display: flex;
-    flex-direction: column;
     gap: 20px;
-    border: 1px solid #1f293d;
 }
 
-.section-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 5px;
-}
-
-/* Formularios e Inputs */
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
-.form-row {
-    display: flex;
-    gap: 12px;
-}
-
-.form-row .form-group {
+.form-group.col {
     flex: 1;
 }
 
-label {
-    font-size: 0.75rem;
+.form-group label {
+    font-size: 11px;
     font-weight: 700;
-    color: #6b7280;
-    text-transform: uppercase;
+    color: var(--color-secundario);
+    margin-bottom: 8px;
     letter-spacing: 0.5px;
 }
 
-input {
-    background-color: #0b0f19;
-    border: 1px solid #1f293d;
-    border-radius: 12px;
+.form-group input {
+    background-color: var(--bg-inputs);
+    border: 1px solid #1e293b;
+    border-radius: 8px;
     padding: 14px 16px;
-    color: #ffffff;
-    font-size: 0.95rem;
-    width: 100%;
+    color: var(--color-texto);
+    font-size: 14px;
     outline: none;
-    transition: border-color 0.2s;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-input::placeholder {
-    color: #374151;
+.form-group input:focus {
+    border-color: var(--color-borde-foco);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
 }
 
-input:focus {
-    border-color: #3b82f6;
+/* Marcadores de ejemplo (placeholders) sutiles */
+.form-group input::placeholder {
+    color: #4b5563;
 }
 
-/* Métodos de Pago */
-.payment-options {
+/* ==========================================
+   5. SELECCIÓN MÉTODO DE PAGO
+   ========================================== */
+.metodos-opciones {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    margin-bottom: 20px;
 }
 
-.payment-method {
+.metodo-item {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: #111827;
-    border: 1px solid #1f293d;
-    border-radius: 14px;
+    background-color: var(--bg-inputs);
+    border: 1px solid #1e293b;
+    border-radius: 8px;
     padding: 16px;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: border-color 0.3s, background-color 0.3s;
 }
 
-.payment-method.active {
-    border-color: #2563eb;
-    background-color: #111827;
-    box-shadow: 0 0 0 1px #2563eb;
+.metodo-item:has(input:checked) {
+    border-color: var(--color-borde-foco);
+    background-color: rgba(37, 99, 235, 0.05);
 }
 
-.method-info {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+.metodo-item input[type="radio"] {
+    margin-right: 15px;
+    accent-color: var(--color-borde-foco);
+    transform: scale(1.2);
 }
 
-.method-icon {
-    font-size: 1.5rem;
-    width: 32px;
-    text-align: center;
-}
-
-.method-icon.visa { color: #1a1f71; background: white; border-radius: 4px; font-size: 1rem; padding: 2px; }
-.method-icon.mastercard { color: #eb001b; background: white; border-radius: 4px; font-size: 1rem; padding: 2px; }
-.method-icon.paypal { color: #003087; background: white; border-radius: 4px; font-size: 1rem; padding: 2px; }
-
-.method-text .name {
-    font-size: 0.95rem;
-    font-weight: 600;
-    display: block;
-}
-
-.method-text .desc {
-    font-size: 0.75rem;
-    color: #6b7280;
-}
-
-.radio-circle {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #374151;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.payment-method.active .radio-circle {
-    border-color: #2563eb;
-}
-
-.payment-method.active .radio-circle::after {
-    content: '';
-    width: 10px;
-    height: 10px;
-    background-color: #2563eb;
-    border-radius: 50%;
-}
-
-/* Sección Tu Pedido - ESTADO VACÍO */
-.empty-cart-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 10px;
-    text-align: center;
-    gap: 12px;
-}
-
-.empty-cart-icon {
-    font-size: 2.5rem;
-    color: #374151;
-    margin-bottom: 5px;
-}
-
-.empty-cart-text {
-    font-size: 0.95rem;
-    color: #6b7280;
+.metodo-detalles {
+    font-size: 14px;
     font-weight: 500;
 }
 
-/* Botón Finalizar Compra Inhabilitado */
-.btn-submit {
-    background-color: #1f293d;
-    color: #4b5563;
-    border: none;
-    border-radius: 14px;
-    padding: 16px;
-    font-size: 1rem;
-    font-weight: 700;
-    width: 100%;
+/* ==========================================
+   6. SECCIÓN DERECHA: RESUMEN DEL PEDIDO
+   ========================================== */
+.checkout-summary-section {
+    background-color: var(--bg-tarjetas);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.checkout-summary-section h3 {
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* Divisor estético */
+.divisor {
+    border: 0;
+    border-top: 1px solid #1e293b;
+    margin: 20px 0;
+}
+
+/* Desglose de precios */
+.resumen-valores {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    cursor: not-allowed;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.valor-linea {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: var(--color-secundario);
+}
+
+.valor-linea span:last-child {
+    color: var(--color-texto);
+    font-weight: 500;
+}
+
+/* Línea final del Total destacado */
+.total-linea {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-texto);
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.total-linea span:last-child {
+    color: var(--color-acento);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.seguridad-texto {
+    text-align: center;
+    font-size: 12px;
+    color: var(--color-secundario);
+    margin-top: 20px;
+}
+
+/* ==========================================
+   7. BOTONES DE ACCIÓN
+   ========================================== */
+.btn-finalizar-pago {
+    width: 100%;
+    background-color: var(--color-verde);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
     margin-top: 10px;
 }
 
-.ssl-notice {
+.btn-finalizar-pago:hover {
+    background-color: #059669; /* Verde ligeramente más oscuro al pasar el mouse */
+}
+
+.btn-finalizar-pago:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================
+   8. RESPONSIVE DESIGN (MÓVILES)
+   ========================================== */
+@media (max-width: 768px) {
+    .checkout-container {
+        grid-template-columns: 1fr; /* Pasa a una sola columna en pantallas chicas */
+        margin: 20px auto;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+#contenedor-productos-pago {
+    max-height: 390px;
+    overflow-y: auto;
+}
+
+#contenedor-productos-pago .producto-resumen-item {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 6px;
-    font-size: 0.75rem;
-    color: #4b5563;
-    text-align: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+#contenedor-productos-pago .imagen-producto-pago {
+    width: 65px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+#contenedor-productos-pago .info-producto-pago {
+    flex: 1;
+    min-width: 0;
+}
+
+#contenedor-productos-pago .info-producto-pago h4 {
+    font-size: 10px;
+    margin: 0 0 4px 0;
+}
+
+#contenedor-productos-pago .info-producto-pago small {
+    display: block;
+    font-size: 8px;
+}
+
+#contenedor-productos-pago .producto-resumen-item > strong {
+    font-size: 9px;
+    white-space: nowrap;
 }
