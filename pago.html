@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GAMESTORE - Resumen y Pago</title>
+
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="estilos/estilo_global.css">
+
+    <!-- CSS ESPECÍFICO DE PAGO -->
+    <link rel="stylesheet" href="estilos/estilo_pago.css">
+
+    <!-- FONT AWESOME -->
+    <script
+        src="https://kit.fontawesome.com/a076d05399.js"
+        crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+
+    <!-- ==========================================
+         HEADER DE LA TIENDA
+         ========================================== -->
+
+    <header class="header">
+
+        <div class="header-container">
+
+            <h1 class="logo">
+                GAME<span>STORE</span>
+            </h1>
+
+            <nav class="nav">
+
+                <a href="menu.html">
+                    Tienda
+                </a>
+
+                <a href="#">
+                    Categorías
+                </a>
+
+                <a href="#">
+                    Ofertas
+                </a>
+
+            </nav>
+
+            <div class="user-actions">
+
+                <div class="cart-icon-container">
+
+                    🛒
+
+                    <span
+                        class="cart-badge"
+                        id="cant-badge">
+                        0
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL
+         ========================================== -->
+
+    <main class="checkout-container">
+
+
+        <!-- ======================================
+             SECCIÓN IZQUIERDA
+             FORMULARIO DE PAGO
+             ====================================== -->
+
+        <section class="checkout-form-section">
+
+            <h2>
+                Formulario de Pago
+            </h2>
+
+
+            <form
+                id="paymentForm"
+                class="pago-form">
+
+
+                <!-- ==================================
+                     DATOS DE FACTURACIÓN
+                     ================================== -->
+
+                <div class="form-section-block">
+
+                    <h3>
+                        Datos de facturación
+                    </h3>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group col">
+
+                            <label for="nombre-fact">
+                                NOMBRE
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nombre-fact"
+                                placeholder="Juan"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group col">
+
+                            <label for="apellido-fact">
+                                APELLIDO
+                            </label>
+
+                            <input
+                                type="text"
+                                id="apellido-fact"
+                                placeholder="García"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email-fact">
+                            EMAIL
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email-fact"
+                            placeholder="juan@email.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="direccion-fact">
+                            DIRECCIÓN
+                        </label>
+
+                        <input
+                            type="text"
+                            id="direccion-fact"
+                            placeholder="Calle Principal 123, Piso 4"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group col">
+
+                            <label for="ciudad-fact">
+                                CIUDAD
+                            </label>
+
+                            <input
+                                type="text"
+                                id="ciudad-fact"
+                                placeholder="Buenos Aires"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group col">
+
+                            <label for="cp-fact">
+                                CÓDIGO POSTAL
+                            </label>
+
+                            <input
+                                type="text"
+                                id="cp-fact"
+                                placeholder="C1001AAA"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================================
+                     MÉTODO DE PAGO
+                     ================================== -->
+
+                <div class="form-section-block">
+
+                    <h3>
+                        Método de pago
+                    </h3>
+
+
+                    <div class="metodos-opciones">
+
+
+                        <label class="metodo-item">
+
+                            <input
+                                type="radio"
+                                name="metodo_pago"
+                                value="visa"
+                                checked
+                            >
+
+                            <span class="metodo-detalles">
+
+                                💳 Visa
+                                (Débito o crédito Visa)
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="metodo-item">
+
+                            <input
+                                type="radio"
+                                name="metodo_pago"
+                                value="mastercard"
+                            >
+
+                            <span class="metodo-detalles">
+
+                                💳 Mastercard
+                                (Débito o crédito Mastercard)
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="metodo-item">
+
+                            <input
+                                type="radio"
+                                name="metodo_pago"
+                                value="paypal"
+                            >
+
+                            <span class="metodo-detalles">
+
+                                🅿️ PayPal
+                                (Pago seguro con PayPal)
+
+                            </span>
+
+                        </label>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================================
+                     DATOS DE TARJETA
+                     ================================== -->
+
+                <div
+                    class="form-section-block"
+                    id="bloque-tarjeta">
+
+
+                    <div class="form-group">
+
+                        <label for="tarjeta">
+                            NÚMERO DE TARJETA
+                        </label>
+
+                        <input
+                            type="text"
+                            id="tarjeta"
+                            placeholder="1234 5678 9012 3456"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-group col">
+
+                            <label for="expiracion">
+                                VENCIMIENTO
+                            </label>
+
+                            <input
+                                type="text"
+                                id="expiracion"
+                                placeholder="MM / AA"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group col">
+
+                            <label for="cvv">
+                                CÓDIGO CVV
+                            </label>
+
+                            <input
+                                type="password"
+                                id="cvv"
+                                placeholder="***"
+                                maxlength="3"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="nombre-tarjeta">
+                            NOMBRE EN LA TARJETA
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nombre-tarjeta"
+                            placeholder="JUAN GARCIA"
+                            required
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- ==================================
+                     BOTÓN FINALIZAR
+                     ================================== -->
+
+                <button
+                    type="submit"
+                    id="btn-finalizar"
+                    class="btn-finalizar-pago">
+
+                    ✓ Finalizar Compra
+
+                </button>
+
+
+            </form>
+
+
+            <!-- ======================================
+                 MENSAJE DE ÉXITO
+                 ====================================== -->
+
+            <div
+                id="successMessage"
+                style="display: none; text-align: center; margin-top: 20px;">
+
+                <h3 style="color: #00ff77;">
+                    ¡Pago Realizado con Éxito!
+                </h3>
+
+                <p>
+                    Tu orden ha sido procesada correctamente.
+                </p>
+
+                <button
+                    id="continueBtn"
+                    class="btn-finalizar-pago">
+
+                    Volver al Menú
+
+                </button>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ======================================
+             SECCIÓN DERECHA
+             RESUMEN DEL PEDIDO
+             ====================================== -->
+
+        <section class="checkout-summary-section">
+
+
+            <h3>
+                Tu pedido
+            </h3>
+
+
+            <!-- PRODUCTOS DINÁMICOS -->
+
+            <div
+                id="contenedor-productos-pago">
+
+            </div>
+
+
+            <hr class="divisor">
+
+
+            <!-- ==================================
+                 RESUMEN DE VALORES
+                 ================================== -->
+
+            <div class="resumen-valores">
+
+
+                <div class="valor-linea">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <span id="pago-subtotal">
+                        $0.00
+                    </span>
+
+                </div>
+
+
+                <div class="valor-linea">
+
+                    <span>
+                        Envío estándar
+                    </span>
+
+                    <span id="pago-envio">
+                        $0.00
+                    </span>
+
+                </div>
+
+
+                <div class="valor-linea">
+
+                    <span>
+                        IVA (16%)
+                    </span>
+
+                    <span id="pago-iva">
+                        $0.00
+                    </span>
+
+                </div>
+
+
+                <div class="valor-linea total-linea">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <span id="pago-total">
+                        $0.00
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <p class="seguridad-texto">
+
+                🔒 Transacción cifrada SSL 256-bit
+
+            </p>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+         CONSERVAMOS LOS DOS SCRIPTS
+         ========================================== -->
+
+    <script src="javascript/pago.js"></script>
+
+    <script src="javascript/daltonismo.js"></script>
+
+
+</body>
+</html>
