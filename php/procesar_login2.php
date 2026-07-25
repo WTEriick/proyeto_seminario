@@ -11,7 +11,7 @@ require_once "conexion.php";
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
-    header("Location: html/index.html");
+    header("Location: index.html");
     exit();
 
 }
@@ -35,7 +35,7 @@ if (empty($login) || empty($password)) {
     echo "
     <script>
         alert('Debes completar todos los campos.');
-        window.location.href = 'html/index.html';
+        window.location.href = 'index.html';
     </script>
     ";
 
@@ -72,7 +72,7 @@ if (!$usuario) {
     echo "
     <script>
         alert('El usuario no existe.');
-        window.location.href = 'html/index.html';
+        window.location.href = 'index.html';
     </script>
     ";
 
@@ -93,7 +93,7 @@ if (!password_verify(
     echo "
     <script>
         alert('Contraseña incorrecta.');
-        window.location.href = 'html/index.html';
+        window.location.href = 'index.html';
     </script>
     ";
 
@@ -118,7 +118,7 @@ $_SESSION["correo"] = $usuario["correo"];
 // ==========================================
 
 header(
-    "Location: html/menu.html"
+    "Location: menu.html"
 );
 
 exit();
