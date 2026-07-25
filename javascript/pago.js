@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function cargarResumenPedido() {
 
-        fetch("../php/obtener_carrito.php", {
+        fetch("php/obtener_carrito.php", {
             method: "GET",
             credentials: "include"
         })
@@ -469,7 +469,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // ==================================
 
                 fetch(
-                    "../php/realizar_compra.php",
+                    "php/realizar_compra.php",
                     {
 
                         method: "POST",

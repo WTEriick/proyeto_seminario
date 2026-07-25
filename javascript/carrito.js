@@ -58,7 +58,7 @@ function irPago(){
 function mostrarCarrito(){
     console.log("mostrarCarrito ejecutándose");
 
-    fetch("../php/obtener_carrito.php")
+    fetch("php/obtener_carrito.php")
 
     .then(response => response.json())
 
@@ -113,7 +113,7 @@ function mostrarCarrito(){
 
                 <div class="info-producto">
 
-                    <img src="../imagenes/${producto.imagen}">
+                    <img src="imagenes/${producto.imagen}">
 
                     <div class="datos">
 
@@ -197,7 +197,7 @@ function mostrarCarrito(){
 
 function aumentar(idJuego){
 
-    fetch("../php/aumentar_cantidad.php",{
+    fetch("php/aumentar_cantidad.php",{
 
         method:"POST",
 
@@ -236,7 +236,7 @@ function aumentar(idJuego){
 
 function disminuir(idJuego){
 
-    fetch("../php/disminuir_cantidad.php",{
+    fetch("php/disminuir_cantidad.php",{
 
         method:"POST",
 
@@ -274,7 +274,7 @@ function disminuir(idJuego){
 
 function eliminarProducto(idJuego){
 
-    fetch("../php/eliminar_carrito.php",{
+    fetch("php/eliminar_carrito.php",{
 
         method:"POST",
 

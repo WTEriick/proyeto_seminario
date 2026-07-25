@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $passwordHash
         ]);
 
-        header("Location: ../html/inicios_sesion.html");
+        header("Location: html/index.html");
         exit();
 
     } catch (PDOException $e) {
@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 } else {
 
-    header("Location: ../html/registro.html");
+    header("Location: html/registro.html");
     exit();
 
 }

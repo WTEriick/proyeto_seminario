@@ -46,7 +46,7 @@ function iniciar() {
                         .replace(/[\u0300-\u036f]/g, "");
 
                     const precioFormateado = parseFloat(juego.precio).toFixed(2);
-                    const rutaImagen = `../imagenes/${juego.imagen}`;
+                    const rutaImagen = `imagenes/${juego.imagen}`;
 
                     const tarjetaHTML = `
                         <div class="product-card" data-category="${categoriaTag}" data-sale="false">

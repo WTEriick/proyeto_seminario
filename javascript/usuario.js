@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // OBTENER DATOS DEL USUARIO
     // ==========================================
 
-    fetch("../php/usuario.php", {
+    fetch("php/usuario.php", {
         method: "GET",
         cache: "no-store"
     })
@@ -108,7 +108,7 @@ correoUsuario.value =
 
 
                 fetch(
-                    "../php/cerrar_sesion.php",
+                    "php/cerrar_sesion.php",
                     {
                         method: "GET",
                         cache: "no-store"
